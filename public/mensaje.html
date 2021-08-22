@@ -87,6 +87,11 @@
     <script>
         var socket = io()
         
+        
+        socket.on('mensaje', function(mensaje){
+            console.log(mensaje)
+        })
+        
         $("#enviar_msj").click( e => {
             e.preventDefault();
 

@@ -22,7 +22,7 @@ io.on("connect", (client) => {
     console.log(`Cliente conectado id: ${client.id}`);
 
     client.on('mensaje', (data, callback) => {
-        client.broadcast.emit('mensaje', data);
+        client.broadcast.emit('mensaje', data, port);
         console.log(data);
     })
 

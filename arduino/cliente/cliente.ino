@@ -19,7 +19,8 @@ void setup() {
 
   ConectarWifi();
 
-  webSocket.begin("192.168.1.77", 3000);
+  //webSocket.begin("192.168.1.77", 3000);
+  webSocket.begin("https://iot-max.herokuapp.com", 80);
   webSocket.emit("mensaje","hello from esp");
   webSocket.on("mensaje", Controlado);
 
