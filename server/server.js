@@ -24,7 +24,7 @@ io.on("connect", (client) => {
     client.on('mensaje', (data, callback) => {
         client.broadcast.emit('mensaje', data, port);
         console.log(data);
-        callback(data);
+        // callback(data);
     })
 
     client.on("disconnect", () =>{
