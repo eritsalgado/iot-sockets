@@ -8,7 +8,7 @@ const app = express();
 let server = http.createServer(app);
 
 const publicPath = path.resolve(__dirname, '../public');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 
 app.use(express.static(publicPath));
 
@@ -24,7 +24,7 @@ io.on("connect", (client) => {
     client.on('mensaje', (data, callback) => {
         client.broadcast.emit('mensaje', data, port);
         console.log(data);
-        callback(port);
+        // callback(port);
     })
 
     client.on("disconnect", () =>{
